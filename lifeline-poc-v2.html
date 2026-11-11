@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lifeline Community Care and Home Services Inc. | Victoria, BC</title>
+  <meta name="description" content="Quality care, right at home. Home health, senior and disability care, respite, housekeeping and community services across Vancouver Island.">
+  <meta name="theme-color" content="#0b3d78">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    :root {
+      --ll-navy:#0b3d78; --ll-blue:#1d75bd; --ll-green:#5aae3c; --ll-orange:#f7941d;
+      --ll-sky:#e9f4fc; --ll-ink:#14253a;
+      --ll-font: "Quicksand", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+    body { color: var(--ll-ink); font-family: var(--ll-font); overflow-x: hidden; }
+    h1,h2,h3,h4 { font-weight: 700; }
+    .text-navy { color: var(--ll-navy) !important; }
+    .bg-sky { background-color: var(--ll-sky) !important; }
+
+    .btn-ll {
+      --bs-btn-color:#fff; --bs-btn-bg:var(--ll-blue); --bs-btn-border-color:var(--ll-blue);
+      --bs-btn-hover-color:#fff; --bs-btn-hover-bg:var(--ll-navy); --bs-btn-hover-border-color:var(--ll-navy);
+      --bs-btn-focus-shadow-rgb:29,117,189; font-weight:700; border-radius:999px;
+      box-shadow:0 .5rem 1.25rem rgba(29,117,189,.3); transition:transform .2s ease;
+    }
+    .btn-ll:hover { transform: translateY(-2px); }
+    .btn-outline-ll {
+      --bs-btn-color:var(--ll-navy); --bs-btn-border-color:var(--ll-navy);
+      --bs-btn-hover-bg:var(--ll-navy); --bs-btn-hover-border-color:var(--ll-navy);
+      font-weight:700; border-radius:999px;
+    }
+
+    /* Logo mark: illustrated house, two figures, heart and sprout */
+    .logo-svg { width: 3rem; height: 3rem; flex-shrink: 0; animation: breathe 4s ease-in-out infinite; }
+    .logo-svg .heart { transform-origin: 50% 60%; animation: beat 1.8s ease-in-out infinite; }
+    @keyframes breathe { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes beat { 0%,100% { transform: scale(1); } 15% { transform: scale(1.15); } 30% { transform: scale(1); } }
+
+    .brand-name { line-height:1.05; color:var(--ll-navy); font-weight:700; }
+    .brand-name small { display:block; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ll-green); }
+
+    /* Hero */
+    .hero { position: relative; overflow: hidden; background: linear-gradient(180deg, var(--ll-sky), #fff 90%); padding: 4rem 0 6rem; }
+    .blob { position:absolute; border-radius:50%; filter: blur(2px); opacity:.5; z-index:0; animation: float 9s ease-in-out infinite; }
+    .blob.b1 { width:22rem; height:22rem; background:rgba(90,174,60,.25); top:-6rem; right:-6rem; }
+    .blob.b2 { width:16rem; height:16rem; background:rgba(29,117,189,.22); bottom:2rem; left:-5rem; animation-delay:-3s; }
+    .blob.b3 { width:8rem; height:8rem; background:rgba(247,148,29,.25); top:40%; right:12%; animation-delay:-6s; }
+    @keyframes float { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(14px,-18px) scale(1.06); } }
+    .hero .container { position:relative; z-index:1; }
+
+    .headline-accent {
+      background: linear-gradient(90deg, var(--ll-blue), var(--ll-green));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .pill-badge { background:#fff; border:2px solid #d6eedb; border-radius:999px; padding:.4rem 1rem; font-weight:700; color:var(--ll-navy); font-size:.9rem; box-shadow:0 .25rem .75rem rgba(0,0,0,.05); }
+    .pill-badge i { color: var(--ll-green); }
+
+    .hero-card {
+      background: linear-gradient(145deg, var(--ll-navy), var(--ll-blue));
+      color:#fff; border-radius:2rem; padding:2rem; position:relative; overflow:hidden;
+      box-shadow:0 1.5rem 3rem rgba(11,61,120,.3);
+    }
+    .hero-card::after { content:""; position:absolute; width:12rem; height:12rem; border-radius:50%; background:rgba(90,174,60,.35); right:-4rem; bottom:-4rem; }
+    .feature-row { display:flex; gap:1rem; align-items:center; padding:.75rem 1rem; border-radius:1rem; background:rgba(255,255,255,.1); position:relative; z-index:1; }
+    .feature-row + .feature-row { margin-top:.75rem; }
+    .feature-dot { width:2.75rem; height:2.75rem; border-radius:50%; display:grid; place-items:center; flex-shrink:0; font-size:1.1rem; }
+
+    /* Wave dividers */
+    .wave { display:block; width:100%; height:auto; margin-top:-1px; }
+
+    /* Services */
+    .card-service { border:0; border-radius:1.5rem; background:#fff; transition: transform .3s ease, box-shadow .3s ease; position:relative; overflow:hidden; }
+    .card-service::before { content:""; position:absolute; inset:0 0 auto 0; height:6px; background:var(--accent); }
+    .service-icon {
+      width:4rem; height:4rem; border-radius:1.25rem; display:grid; place-items:center;
+      color:#fff; font-size:1.6rem; background:var(--accent);
+      box-shadow:0 .5rem 1rem color-mix(in srgb, var(--accent) 35%, transparent);
+      transition: transform .4s cubic-bezier(.34,1.56,.64,1);
+    }
+    @media (hover:hover) {
+      .card-service:hover { transform: translateY(-8px) rotate(-.4deg); box-shadow:0 1.25rem 2rem rgba(11,61,120,.15); }
+      .card-service:hover .service-icon { transform: scale(1.12) rotate(-6deg); }
+    }
+
+    /* Values */
+    .value-pill { display:inline-flex; align-items:center; gap:.5rem; border-radius:999px; padding:.75rem 1.4rem; font-weight:700; background:#fff; color:var(--ll-navy); box-shadow:0 .5rem 1rem rgba(0,0,0,.06); transition: transform .3s ease; }
+    .value-pill:hover { transform: translateY(-4px) scale(1.04); }
+    .value-pill i { color:var(--ll-green); font-size:1.2rem; }
+    .script { font-family: "Brush Script MT", "Segoe Script", cursive; color:var(--ll-green); }
+
+    /* Trust strip */
+    .trust-strip { background:var(--ll-navy); color:#fff; border-radius:1.5rem; }
+    .trust-strip .item { display:flex; align-items:center; gap:.5rem; font-weight:600; }
+
+    /* Contact */
+    .form-control, .form-select { border-radius:1rem; border:2px solid #dbe7f3; padding:.8rem 1rem; }
+    .form-control:focus, .form-select:focus { border-color:var(--ll-green); box-shadow:0 0 0 .25rem rgba(90,174,60,.2); }
+    .contact-card { border-radius:2rem; border:0; box-shadow:0 1rem 2.5rem rgba(11,61,120,.1); }
+    .contact-link { display:flex; align-items:center; gap:.9rem; text-decoration:none; color:var(--ll-ink); font-weight:700; }
+    .contact-link span.ic { width:2.75rem; height:2.75rem; border-radius:50%; display:grid; place-items:center; color:#fff; flex-shrink:0; }
+
+    /* Footer */
+    .footer-band { background:var(--ll-navy); color:#dbe8f5; position:relative; }
+    .footer-band a { color:#fff; text-decoration:none; }
+    .footer-band a:hover { text-decoration:underline; }
+    .wsbc { display:inline-flex; border-radius:.4rem; overflow:hidden; font-weight:800; font-size:.85rem; line-height:1; letter-spacing:.02em; }
+    .wsbc span { padding:.45rem .6rem; }
+    .wsbc .w { background:#111; color:#fff; }
+    .wsbc .s { background:var(--ll-orange); color:#111; }
+
+    /* Mobile call bar */
+    .call-bar { position:fixed; bottom:1rem; left:1rem; right:1rem; z-index:1030; display:none; }
+    .call-bar a { box-shadow:0 .75rem 1.5rem rgba(11,61,120,.35); }
+    @media (max-width: 767.98px) { .call-bar { display:block; } body { padding-bottom: 5rem; } }
+
+    /* Scroll reveal */
+    .reveal { opacity:0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+    .reveal.in { opacity:1; transform:none; }
+    .reveal.d1 { transition-delay:.08s; } .reveal.d2 { transition-delay:.16s; } .reveal.d3 { transition-delay:.24s; } .reveal.d4 { transition-delay:.32s; }
+
+    /* Heart burst on success */
+    .burst { position:fixed; pointer-events:none; font-size:1.25rem; z-index:2000; animation: rise 1.4s ease-out forwards; }
+    @keyframes rise { to { transform: translate(var(--dx), -18rem) rotate(var(--r)); opacity:0; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+      .reveal { opacity:1; transform:none; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="visually-hidden-focusable position-absolute m-2 p-2 bg-white" href="#main">Skip to content</a>
+
+  <header class="sticky-top bg-white bg-opacity-90 backdrop-blur shadow-sm">
+    <nav class="navbar navbar-expand-lg container py-2" aria-label="Primary">
+      <a class="navbar-brand d-flex align-items-center gap-2 py-0" href="#top" aria-label="Lifeline home">
+        <svg class="logo-svg" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M50 8 L92 42 L84 42 L84 40 L50 14 L16 40 L16 42 L8 42 Z" fill="#1d75bd"/>
+          <rect x="44" y="18" width="12" height="10" fill="#1d75bd"/>
+          <path d="M18 52 Q50 96 82 52 L86 62 Q50 108 14 62 Z" fill="#1d75bd" opacity=".9"/>
+          <circle cx="38" cy="50" r="9" fill="#0b3d78"/>
+          <circle cx="62" cy="50" r="9" fill="#5aae3c"/>
+          <path class="heart" d="M50 72 C40 64 36 58 42 54 C46 52 49 55 50 58 C51 55 54 52 58 54 C64 58 60 64 50 72 Z" fill="#fff"/>
+          <path d="M70 26 Q82 18 88 26 Q80 34 70 26 Z" fill="#5aae3c"/>
+        </svg>
+        <span class="brand-name fs-5">Lifeline<small>Community Care</small></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 py-3 py-lg-0 fw-semibold">
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#values">Values</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item mt-2 mt-lg-0">
+            <a class="btn btn-ll w-100" href="tel:+12046984791"><i class="bi bi-telephone-fill me-1"></i>Call Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section id="top" class="hero">
+      <span class="blob b1" aria-hidden="true"></span>
+      <span class="blob b2" aria-hidden="true"></span>
+      <span class="blob b3" aria-hidden="true"></span>
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="d-flex flex-wrap gap-2 mb-4 reveal">
+              <span class="pill-badge"><i class="bi bi-shield-check"></i> WorkSafeBC Registered</span>
+              <span class="pill-badge"><i class="bi bi-patch-check"></i> Fully Insured</span>
+            </div>
+            <h1 class="display-4 fw-bold text-navy mb-3 reveal d1">Compassionate Care. Stronger Communities. <span class="headline-accent">A Brighter Tomorrow.</span></h1>
+            <p class="lead text-body-secondary reveal d2">Trusted, warm and professional support that helps people live safely, comfortably and independently at home.</p>
+            <div class="d-grid d-sm-flex gap-3 mt-4 reveal d3">
+              <a class="btn btn-ll btn-lg px-4 py-3" href="#contact"><i class="bi bi-heart-fill me-2"></i>Request Care</a>
+              <a class="btn btn-outline-ll btn-lg px-4 py-3" href="tel:+12046984791"><i class="bi bi-telephone me-2"></i>+1 (204) 698-4791</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 reveal d2">
+            <div class="hero-card">
+              <h2 class="h4 fw-bold mb-4">Why families choose Lifeline</h2>
+              <div class="feature-row">
+                <span class="feature-dot" style="background:var(--ll-green)"><i class="bi bi-shield-check"></i></span>
+                <div><strong>Trained &amp; background-checked</strong><div class="small opacity-75">Carers you can trust in your home</div></div>
+              </div>
+              <div class="feature-row">
+                <span class="feature-dot" style="background:var(--ll-orange)"><i class="bi bi-heart-fill"></i></span>
+                <div><strong>Personalized care plans</strong><div class="small opacity-75">Support that grows with your needs</div></div>
+              </div>
+              <div class="feature-row">
+                <span class="feature-dot" style="background:#fff;color:var(--ll-navy)"><i class="bi bi-people-fill"></i></span>
+                <div><strong>Respectful, reliable service</strong><div class="small opacity-75">Compassionate people, on time</div></div>
+              </div>
+              <div class="feature-row">
+                <span class="feature-dot" style="background:var(--ll-blue)"><i class="bi bi-clock-history"></i></span>
+                <div><strong>Available when you need us</strong><div class="small opacity-75">Planned visits and urgent support</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;bottom:-1px;left:0;">
+        <path fill="#ffffff" d="M0,64 C240,120 480,0 720,48 C960,96 1200,24 1440,64 L1440,120 L0,120 Z"/>
+      </svg>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="container -mt-0 py-4">
+      <div class="trust-strip p-4 p-md-5 reveal shadow">
+        <div class="row row-cols-2 row-cols-md-4 g-3 text-center">
+          <div class="col item justify-content-center"><i class="bi bi-person-check fs-4" style="color:var(--ll-green)"></i>Background checked</div>
+          <div class="col item justify-content-center"><i class="bi bi-sliders fs-4" style="color:var(--ll-orange)"></i>Flexible plans</div>
+          <div class="col item justify-content-center"><i class="bi bi-hand-thumbs-up fs-4" style="color:var(--ll-green)"></i>Respectful care</div>
+          <div class="col item justify-content-center"><i class="bi bi-stars fs-4" style="color:var(--ll-orange)"></i>Quality guaranteed</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-5 py-lg-6">
+      <div class="container">
+        <header class="text-center mb-5 reveal">
+          <p class="script fs-3 mb-0">care for every stage</p>
+          <h2 class="fw-bold text-navy display-6">Our Services</h2>
+          <p class="text-body-secondary">Support across home, community and facility settings.</p>
+        </header>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+          <div class="col reveal"><article class="card card-service h-100 shadow-sm p-3" style="--accent:var(--ll-blue)"><div class="card-body">
+            <div class="service-icon mb-4"><i class="bi bi-heart-pulse"></i></div>
+            <h3 class="h5 fw-bold text-navy">Home Health &amp; Personal Care</h3>
+            <p class="text-body-secondary mb-0">Bathing, dressing, mobility, medication reminders and more.</p>
+          </div></article></div>
+
+          <div class="col reveal d1"><article class="card card-service h-100 shadow-sm p-3" style="--accent:var(--ll-green)"><div class="card-body">
+            <div class="service-icon mb-4"><i class="bi bi-person-hearts"></i></div>
+            <h3 class="h5 fw-bold text-navy">Senior &amp; Disability Care</h3>
+            <p class="text-body-secondary mb-0">Compassionate support for greater independence.</p>
+          </div></article></div>
+
+          <div class="col reveal d2"><article class="card card-service h-100 shadow-sm p-3" style="--accent:var(--ll-orange)"><div class="card-body">
+            <div class="service-icon mb-4"><i class="bi bi-people"></i></div>
+            <h3 class="h5 fw-bold text-navy">Respite &amp; Companion Care</h3>
+            <p class="text-body-secondary mb-0">Peace of mind for you and your loved ones.</p>
+          </div></article></div>
+
+          <div class="col reveal d3"><article class="card card-service h-100 shadow-sm p-3" style="--accent:var(--ll-navy)"><div class="card-body">
+            <div class="service-icon mb-4"><i class="bi bi-house-check"></i></div>
+            <h3 class="h5 fw-bold text-navy">Housekeeping &amp; Home Services</h3>
+            <p class="text-body-secondary mb-0">A clean and healthy home environment.</p>
+          </div></article></div>
+
+          <div class="col reveal"><article class="card card-service h-100 shadow-sm p-3" style="--accent:var(--ll-green)"><div class="card-body">
+            <div class="service-icon mb-4"><i class="bi bi-building"></i></div>
+            <h3 class="h5 fw-bold text-navy">Commercial &amp; Institutional Cleaning</h3>
+            <p class="text-body-secondary mb-0">Professional cleaning for businesses, facilities and government programs.</p>
+          </div></article></div>
+
+          <div class="col reveal d1"><article class="card card-service h-100 shadow-sm p-3" style="--accent:var(--ll-blue)"><div class="card-body">
+            <div class="service-icon mb-4"><i class="bi bi-car-front"></i></div>
+            <h3 class="h5 fw-bold text-navy">Meal, Transport &amp; Errands</h3>
+            <p class="text-body-secondary mb-0">Nutritious meals, safe transport and daily errands.</p>
+          </div></article></div>
+
+          <div class="col reveal d2"><article class="card card-service h-100 shadow-sm p-3" style="--accent:var(--ll-orange)"><div class="card-body">
+            <div class="service-icon mb-4"><i class="bi bi-person-badge"></i></div>
+            <h3 class="h5 fw-bold text-navy">Facility Staffing &amp; Contracts</h3>
+            <p class="text-body-secondary mb-0">Reliable, trained and experienced staff.</p>
+          </div></article></div>
+
+          <div class="col reveal d3"><article class="card card-service h-100 shadow-sm p-3" style="--accent:var(--ll-navy)"><div class="card-body">
+            <div class="service-icon mb-4"><i class="bi bi-bank"></i></div>
+            <h3 class="h5 fw-bold text-navy">Community &amp; Government Programs</h3>
+            <p class="text-body-secondary mb-0">Supporting healthier, stronger communities.</p>
+          </div></article></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section id="values" class="bg-sky py-5 position-relative">
+      <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;top:-1px;left:0;transform:rotate(180deg);">
+        <path fill="#e9f4fc" d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"/>
+      </svg>
+      <div class="container text-center py-4">
+        <h2 class="fw-bold text-navy mb-4 reveal">Our Values</h2>
+        <div class="d-flex flex-wrap justify-content-center gap-3 reveal d1">
+          <span class="value-pill"><i class="bi bi-suit-heart-fill"></i>Compassion</span>
+          <span class="value-pill"><i class="bi bi-award-fill"></i>Dignity</span>
+          <span class="value-pill"><i class="bi bi-unlock-fill"></i>Independence</span>
+        </div>
+        <p class="script display-6 mt-5 mb-0 reveal d2">Quality Care. Right at Home.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-5 py-lg-6">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5 reveal">
+            <h2 class="fw-bold text-navy display-6">Let's talk about care</h2>
+            <p class="text-body-secondary fs-5">Tell us what you need and we'll reach out for a free, no-obligation chat.</p>
+            <div class="d-grid gap-3 mt-4">
+              <a class="contact-link" href="tel:+12046984791"><span class="ic" style="background:var(--ll-blue)"><i class="bi bi-telephone-fill"></i></span>+1 (204) 698-4791</a>
+              <a class="contact-link" href="mailto:davies.kavuma@gmail.com"><span class="ic" style="background:var(--ll-green)"><i class="bi bi-envelope-fill"></i></span>davies.kavuma@gmail.com</a>
+              <div class="contact-link"><span class="ic" style="background:var(--ll-navy)"><i class="bi bi-geo-alt-fill"></i></span>Victoria, BC · Serving Vancouver Island &amp; Beyond</div>
+            </div>
+          </div>
+
+          <div class="col-lg-7 reveal d1">
+            <div class="card contact-card p-3 p-md-4">
+              <form id="contactForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="name" class="form-label fw-bold">Full name</label>
+                    <input id="name" type="text" class="form-control" autocomplete="name" required>
+                    <div class="invalid-feedback">Please tell us your name.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label fw-bold">Phone</label>
+                    <input id="phone" type="tel" class="form-control" autocomplete="tel" required>
+                    <div class="invalid-feedback">Please add a phone number.</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="email" class="form-label fw-bold">Email <span class="fw-normal text-body-secondary">(optional)</span></label>
+                    <input id="email" type="email" class="form-control" autocomplete="email">
+                  </div>
+                  <div class="col-12">
+                    <label for="service" class="form-label fw-bold">What do you need?</label>
+                    <select id="service" class="form-select" required>
+                      <option value="" selected disabled>Choose a service…</option>
+                      <option>Home Health &amp; Personal Care</option>
+                      <option>Senior &amp; Disability Care</option>
+                      <option>Respite &amp; Companion Care</option>
+                      <option>Housekeeping &amp; Home Services</option>
+                      <option>Commercial &amp; Institutional Cleaning</option>
+                      <option>Meal, Transport &amp; Errands</option>
+                      <option>Facility Staffing &amp; Contracts</option>
+                      <option>Community &amp; Government Programs</option>
+                    </select>
+                    <div class="invalid-feedback">Please choose a service.</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="message" class="form-label fw-bold">Anything we should know?</label>
+                    <textarea id="message" rows="4" class="form-control"></textarea>
+                  </div>
+                  <div class="col-12 d-grid">
+                    <button type="submit" class="btn btn-ll btn-lg py-3"><i class="bi bi-send me-2"></i>Send my request</button>
+                  </div>
+                  <div class="col-12">
+                    <div id="formStatus" class="alert alert-success rounded-4 d-none mb-0" role="status" tabindex="-1"></div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer-band pt-5 pb-4">
+    <div class="container">
+      <div class="row gy-4 align-items-center">
+        <div class="col-md-6">
+          <p class="fs-3 fw-bold mb-1 text-white">Lifeline <span style="color:var(--ll-green)">…</span> Because you matter.</p>
+          <p class="script fs-4 mb-0" style="color:#8fd16f">Your health, our priority.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="mb-1"><a href="tel:+12046984791">+1 (204) 698-4791</a></p>
+          <p class="mb-2">Victoria, BC · Serving Vancouver Island &amp; Beyond</p>
+          <span class="wsbc"><span class="w">WORK</span><span class="s">SAFE BC</span></span>
+        </div>
+      </div>
+      <hr class="border-light opacity-25 my-4">
+      <p class="small text-center mb-0">&copy; <span id="year"></span> Lifeline Community Care and Home Services Inc.</p>
+    </div>
+  </footer>
+
+  <!-- Mobile call bar -->
+  <div class="call-bar">
+    <a class="btn btn-ll btn-lg w-100" href="tel:+12046984791"><i class="bi bi-telephone-fill me-2"></i>Call Lifeline</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.15 });
+      reveals.forEach((el) => io.observe(el));
+    } else {
+      reveals.forEach((el) => el.classList.add('in'));
+    }
+
+    // Form: validation + friendly confirmation with a heart burst (POC only, nothing is sent)
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+
+    function heartBurst(x, y) {
+      const hearts = ['💚', '💙', '🧡'];
+      for (let i = 0; i < 12; i++) {
+        const h = document.createElement('span');
+        h.className = 'burst';
+        h.textContent = hearts[i % hearts.length];
+        h.style.left = x + 'px';
+        h.style.top = y + 'px';
+        h.style.setProperty('--dx', (Math.random() * 16 - 8) + 'rem');
+        h.style.setProperty('--r', (Math.random() * 60 - 30) + 'deg');
+        document.body.appendChild(h);
+        setTimeout(() => h.remove(), 1500);
+      }
+    }
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        form.querySelector(':invalid').focus();
+        return;
+      }
+      const name = document.getElementById('name').value.trim();
+      status.textContent = 'Thank you, ' + name + '! A Lifeline team member will be in touch soon.';
+      status.classList.remove('d-none');
+      status.focus();
+      const r = form.querySelector('button[type=submit]').getBoundingClientRect();
+      heartBurst(r.left + r.width / 2, r.top);
+      form.reset();
+      form.classList.remove('was-validated');
+    });
+  </script>
+</body>
+</html>

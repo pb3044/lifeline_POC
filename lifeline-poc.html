@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lifeline Community Care and Home Services Inc. | Victoria, BC</title>
+  <meta name="description" content="Quality care, right at home. Home health, senior and disability care, respite, housekeeping and community services across Vancouver Island.">
+  <meta name="theme-color" content="#0b3d78">
+
+  <!-- Bootstrap 5.3 + Bootstrap Icons (pinned versions). Add SRI hashes from getbootstrap.com before production. -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    /* Palette sampled from the Lifeline business card */
+    :root {
+      --ll-navy:  #0b3d78;
+      --ll-blue:  #1d75bd;
+      --ll-green: #5aae3c;
+      --ll-orange:#f7941d;
+      --ll-sky:   #e9f4fc;
+      --ll-ink:   #14253a;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+    body { color: var(--ll-ink); font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    .text-navy { color: var(--ll-navy) !important; }
+    .bg-navy   { background-color: var(--ll-navy) !important; }
+    .bg-sky    { background-color: var(--ll-sky) !important; }
+
+    .btn-ll {
+      --bs-btn-color: #fff; --bs-btn-bg: var(--ll-blue); --bs-btn-border-color: var(--ll-blue);
+      --bs-btn-hover-color: #fff; --bs-btn-hover-bg: var(--ll-navy); --bs-btn-hover-border-color: var(--ll-navy);
+      --bs-btn-active-bg: var(--ll-navy); --bs-btn-active-border-color: var(--ll-navy);
+      --bs-btn-focus-shadow-rgb: 29, 117, 189;
+      font-weight: 600;
+    }
+    .btn-outline-ll {
+      --bs-btn-color: var(--ll-navy); --bs-btn-border-color: var(--ll-navy);
+      --bs-btn-hover-bg: var(--ll-navy); --bs-btn-hover-border-color: var(--ll-navy);
+      --bs-btn-focus-shadow-rgb: 11, 61, 120;
+      font-weight: 600;
+    }
+
+    .brand-mark {
+      width: 2.6rem; height: 2.6rem; border-radius: 50%;
+      background: var(--ll-blue); color: #fff;
+      display: grid; place-items: center; position: relative; flex-shrink: 0;
+    }
+    .brand-mark::after {
+      content: ""; position: absolute; top: -.2rem; right: -.25rem;
+      width: .7rem; height: .7rem; border-radius: 0 80% 0 80%; background: var(--ll-green);
+    }
+    .brand-name { line-height: 1.1; color: var(--ll-navy); }
+    .brand-name small { display: block; font-size: .72rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ll-green); }
+
+    .hero {
+      background: linear-gradient(180deg, var(--ll-sky) 0%, #fff 100%);
+    }
+    .hero-panel {
+      background: var(--ll-navy); color: #fff; border-radius: 1.25rem;
+      padding: 2rem; position: relative; overflow: hidden;
+    }
+    .hero-panel::before {
+      content: ""; position: absolute; right: -4rem; bottom: -4rem;
+      width: 14rem; height: 14rem; border-radius: 50%;
+      background: rgba(90, 174, 60, .25);
+    }
+    .feature-dot {
+      width: 2.5rem; height: 2.5rem; border-radius: 50%;
+      display: grid; place-items: center; flex-shrink: 0; color: #fff;
+    }
+
+    .service-icon {
+      width: 3.25rem; height: 3.25rem; border-radius: 50%;
+      display: grid; place-items: center; color: #fff; font-size: 1.4rem;
+    }
+    .card-service {
+      border: 0; border-top: 4px solid var(--ll-blue); border-radius: 1rem;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    @media (hover: hover) {
+      .card-service:hover { transform: translateY(-4px); box-shadow: 0 .75rem 1.5rem rgba(11, 61, 120, .12); }
+    }
+
+    .value-pill {
+      border-radius: 999px; padding: .6rem 1.1rem; font-weight: 600;
+      background: #fff; color: var(--ll-navy); border: 2px solid var(--ll-green);
+    }
+
+    .wsbc {
+      display: inline-flex; border-radius: .35rem; overflow: hidden; font-weight: 800;
+      font-size: .9rem; letter-spacing: .02em; line-height: 1;
+    }
+    .wsbc span { padding: .45rem .6rem; }
+    .wsbc .w { background: #111; color: #fff; }
+    .wsbc .s { background: var(--ll-orange); color: #111; }
+
+    .footer-band { background: var(--ll-navy); color: #dbe8f5; }
+    .footer-band a { color: #fff; text-decoration: none; }
+    .footer-band a:hover { text-decoration: underline; }
+    .tagline-script { font-style: italic; color: var(--ll-green); font-weight: 600; }
+
+    .form-control:focus, .form-select:focus {
+      border-color: var(--ll-blue);
+      box-shadow: 0 0 0 .25rem rgba(29, 117, 189, .2);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .card-service { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="visually-hidden-focusable position-absolute m-2 p-2 bg-white" href="#main">Skip to content</a>
+
+  <header class="sticky-top bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg container py-2" aria-label="Primary">
+      <a class="navbar-brand d-flex align-items-center gap-2 py-0" href="#top" aria-label="Lifeline home">
+        <span class="brand-mark" aria-hidden="true"><i class="bi bi-house-heart-fill"></i></span>
+        <span class="brand-name fw-bold fs-5">Lifeline<small>Community Care</small></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 py-3 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#values">Values</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item mt-2 mt-lg-0">
+            <a class="btn btn-ll w-100" href="tel:+12046984791"><i class="bi bi-telephone-fill me-1"></i>Call Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section id="top" class="hero py-5">
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-lg-6">
+            <p class="wsbc mb-3" aria-label="WorkSafeBC registered and insured">
+              <span class="w">WORK</span><span class="s">SAFE BC</span>
+            </p>
+            <p class="small fw-semibold text-uppercase mb-2" style="color:var(--ll-green)">Registered &amp; Fully Insured</p>
+            <h1 class="display-5 fw-bold text-navy mb-3">Compassionate Care. Stronger Communities. A Brighter Tomorrow.</h1>
+            <p class="lead text-body-secondary">
+              Trusted, professional support that helps people live safely, comfortably and independently
+              at home and in the community.
+            </p>
+            <div class="d-grid d-sm-flex gap-2 mt-4">
+              <a class="btn btn-ll btn-lg px-4" href="#contact"><i class="bi bi-calendar2-check me-1"></i>Request Care</a>
+              <a class="btn btn-outline-ll btn-lg px-4" href="tel:+12046984791"><i class="bi bi-telephone me-1"></i>+1 (204) 698-4791</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="hero-panel shadow-lg">
+              <h2 class="h4 fw-bold mb-4">Why families choose Lifeline</h2>
+              <ul class="list-unstyled mb-0 d-grid gap-3">
+                <li class="d-flex gap-3 align-items-start">
+                  <span class="feature-dot" style="background:var(--ll-green)"><i class="bi bi-shield-check"></i></span>
+                  <div><strong>Trained &amp; background-checked workers</strong><br><span class="small opacity-75">Carers you can trust in your home.</span></div>
+                </li>
+                <li class="d-flex gap-3 align-items-start">
+                  <span class="feature-dot" style="background:var(--ll-blue)"><i class="bi bi-heart-fill"></i></span>
+                  <div><strong>Flexible, personalized care plans</strong><br><span class="small opacity-75">Support that adapts as needs change.</span></div>
+                </li>
+                <li class="d-flex gap-3 align-items-start">
+                  <span class="feature-dot" style="background:var(--ll-orange)"><i class="bi bi-people-fill"></i></span>
+                  <div><strong>Reliable, respectful service</strong><br><span class="small opacity-75">Compassionate people, on time, every time.</span></div>
+                </li>
+                <li class="d-flex gap-3 align-items-start">
+                  <span class="feature-dot" style="background:var(--ll-blue)"><i class="bi bi-clock-history"></i></span>
+                  <div><strong>Available when you need us</strong><br><span class="small opacity-75">Planned visits and urgent support.</span></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-5 py-lg-6">
+      <div class="container">
+        <header class="text-center mb-5">
+          <h2 class="fw-bold text-navy">Our Services</h2>
+          <p class="text-body-secondary mb-0">Care and support across home, community and facility settings.</p>
+        </header>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+          <div class="col">
+            <article class="card card-service h-100 shadow-sm p-3">
+              <div class="card-body">
+                <div class="service-icon mb-3" style="background:var(--ll-blue)"><i class="bi bi-heart-pulse"></i></div>
+                <h3 class="h5 fw-bold text-navy">Home Health &amp; Personal Care</h3>
+                <p class="text-body-secondary mb-0">Bathing, dressing, mobility, medication reminders and more.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card card-service h-100 shadow-sm p-3">
+              <div class="card-body">
+                <div class="service-icon mb-3" style="background:var(--ll-green)"><i class="bi bi-person-hearts"></i></div>
+                <h3 class="h5 fw-bold text-navy">Senior &amp; Disability Care</h3>
+                <p class="text-body-secondary mb-0">Compassionate support for greater independence.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card card-service h-100 shadow-sm p-3">
+              <div class="card-body">
+                <div class="service-icon mb-3" style="background:var(--ll-blue)"><i class="bi bi-people"></i></div>
+                <h3 class="h5 fw-bold text-navy">Respite &amp; Companion Care</h3>
+                <p class="text-body-secondary mb-0">Peace of mind for you and your loved ones.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card card-service h-100 shadow-sm p-3">
+              <div class="card-body">
+                <div class="service-icon mb-3" style="background:var(--ll-green)"><i class="bi bi-house-check"></i></div>
+                <h3 class="h5 fw-bold text-navy">Housekeeping &amp; Home Services</h3>
+                <p class="text-body-secondary mb-0">A clean and healthy home environment.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card card-service h-100 shadow-sm p-3">
+              <div class="card-body">
+                <div class="service-icon mb-3" style="background:var(--ll-blue)"><i class="bi bi-building"></i></div>
+                <h3 class="h5 fw-bold text-navy">Commercial &amp; Institutional Cleaning</h3>
+                <p class="text-body-secondary mb-0">Professional cleaning for businesses, facilities and government programs.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card card-service h-100 shadow-sm p-3">
+              <div class="card-body">
+                <div class="service-icon mb-3" style="background:var(--ll-green)"><i class="bi bi-car-front"></i></div>
+                <h3 class="h5 fw-bold text-navy">Meal, Transport &amp; Errands</h3>
+                <p class="text-body-secondary mb-0">Nutritious meals, safe transport and daily errands.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card card-service h-100 shadow-sm p-3">
+              <div class="card-body">
+                <div class="service-icon mb-3" style="background:var(--ll-orange)"><i class="bi bi-person-badge"></i></div>
+                <h3 class="h5 fw-bold text-navy">Facility Staffing &amp; Contracts</h3>
+                <p class="text-body-secondary mb-0">Reliable, trained and experienced staff.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card card-service h-100 shadow-sm p-3">
+              <div class="card-body">
+                <div class="service-icon mb-3" style="background:var(--ll-navy)"><i class="bi bi-bank"></i></div>
+                <h3 class="h5 fw-bold text-navy">Community &amp; Government Programs</h3>
+                <p class="text-body-secondary mb-0">Supporting healthier, stronger communities.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section id="values" class="bg-sky py-5">
+      <div class="container text-center">
+        <h2 class="fw-bold text-navy mb-4">Our Values</h2>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <span class="value-pill"><i class="bi bi-suit-heart-fill me-1" style="color:var(--ll-green)"></i>Compassion</span>
+          <span class="value-pill"><i class="bi bi-award-fill me-1" style="color:var(--ll-green)"></i>Dignity</span>
+          <span class="value-pill"><i class="bi bi-unlock-fill me-1" style="color:var(--ll-green)"></i>Independence</span>
+        </div>
+        <p class="tagline-script fs-4 mt-4 mb-0">Quality Care. Right at Home.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-5 py-lg-6">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <h2 class="fw-bold text-navy">Let's talk about care</h2>
+            <p class="text-body-secondary">Tell us what you need and we'll reach out to arrange a free, no-obligation conversation.</p>
+            <ul class="list-unstyled d-grid gap-3 mt-4">
+              <li class="d-flex gap-3 align-items-center">
+                <span class="service-icon" style="width:2.5rem;height:2.5rem;font-size:1rem;background:var(--ll-blue)"><i class="bi bi-telephone-fill"></i></span>
+                <a class="fw-semibold text-decoration-none" href="tel:+12046984791">+1 (204) 698-4791</a>
+              </li>
+              <li class="d-flex gap-3 align-items-center">
+                <span class="service-icon" style="width:2.5rem;height:2.5rem;font-size:1rem;background:var(--ll-green)"><i class="bi bi-envelope-fill"></i></span>
+                <a class="fw-semibold text-decoration-none" href="mailto:davies.kavuma@gmail.com">davies.kavuma@gmail.com</a>
+              </li>
+              <li class="d-flex gap-3 align-items-center">
+                <span class="service-icon" style="width:2.5rem;height:2.5rem;font-size:1rem;background:var(--ll-navy)"><i class="bi bi-geo-alt-fill"></i></span>
+                <span>Victoria, BC · Serving Vancouver Island &amp; Beyond</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="card border-0 shadow-sm rounded-4 p-3 p-md-4">
+              <form id="contactForm" class="needs-validation" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="name" class="form-label fw-semibold">Full name</label>
+                    <input id="name" name="name" type="text" class="form-control form-control-lg" autocomplete="name" required>
+                    <div class="invalid-feedback">Please enter your name.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label fw-semibold">Phone</label>
+                    <input id="phone" name="phone" type="tel" class="form-control form-control-lg" autocomplete="tel" required>
+                    <div class="invalid-feedback">Please enter a phone number.</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="email" class="form-label fw-semibold">Email <span class="text-body-secondary fw-normal">(optional)</span></label>
+                    <input id="email" name="email" type="email" class="form-control form-control-lg" autocomplete="email">
+                  </div>
+                  <div class="col-12">
+                    <label for="service" class="form-label fw-semibold">Service needed</label>
+                    <select id="service" name="service" class="form-select form-select-lg" required>
+                      <option value="" selected disabled>Choose a service…</option>
+                      <option>Home Health &amp; Personal Care</option>
+                      <option>Senior &amp; Disability Care</option>
+                      <option>Respite &amp; Companion Care</option>
+                      <option>Housekeeping &amp; Home Services</option>
+                      <option>Commercial &amp; Institutional Cleaning</option>
+                      <option>Meal, Transport &amp; Errands</option>
+                      <option>Facility Staffing &amp; Contracts</option>
+                      <option>Community &amp; Government Programs</option>
+                    </select>
+                    <div class="invalid-feedback">Please choose a service.</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="message" class="form-label fw-semibold">How can we help?</label>
+                    <textarea id="message" name="message" rows="4" class="form-control form-control-lg"></textarea>
+                  </div>
+                  <div class="col-12 d-grid">
+                    <button type="submit" class="btn btn-ll btn-lg">Send request</button>
+                  </div>
+                  <div class="col-12">
+                    <div id="formStatus" class="alert alert-success d-none mb-0" role="status" tabindex="-1"></div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer-band py-5">
+    <div class="container">
+      <div class="row gy-4 align-items-center">
+        <div class="col-md-6">
+          <p class="fs-4 fw-bold mb-1 text-white">Lifeline <span style="color:var(--ll-green)">…</span> Because you matter.</p>
+          <p class="tagline-script mb-0">Your Health, Our Priority.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="mb-1"><a href="tel:+12046984791">+1 (204) 698-4791</a></p>
+          <p class="mb-1">Victoria, BC · Serving Vancouver Island &amp; Beyond</p>
+          <p class="small mb-0">Registered &amp; insured with WorkSafeBC</p>
+        </div>
+      </div>
+      <hr class="border-light opacity-25 my-4">
+      <p class="small text-center mb-0">&copy; <span id="year"></span> Lifeline Community Care and Home Services Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Bootstrap-style validation, plus a simulated submit for the POC (no data leaves the page).
+    (function () {
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (!form.checkValidity()) {
+          form.classList.add('was-validated');
+          form.querySelector(':invalid').focus();
+          return;
+        }
+        const name = form.elements.name.value.trim();
+        status.textContent = 'Thank you, ' + name + '. A Lifeline team member will contact you shortly.';
+        status.classList.remove('d-none');
+        status.focus();
+        form.reset();
+        form.classList.remove('was-validated');
+      });
+    })();
+  </script>
+</body>
+</html>

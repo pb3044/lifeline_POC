@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Lifeline Community Care</title>
+  <meta name="description" content="Request care from Lifeline Community Care in Victoria, BC. Call +1 (204) 698-4791 or send a message for a free, no-obligation chat.">
+  <meta name="theme-color" content="#0b3d78">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <a class="visually-hidden-focusable position-absolute m-2 p-2 bg-white rounded" href="#main">Skip to content</a>
+
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg container py-2" aria-label="Primary">
+      <a class="navbar-brand d-flex align-items-center gap-2 py-0" href="index.html">
+        <img class="brand-logo" src="assets/images/logo.png" width="52" height="52" alt="Lifeline Community Care logo">
+        <span class="brand-name fs-5">Lifeline<small>Community Care</small></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 py-3 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>
+          <li class="nav-item mt-2 mt-lg-0">
+            <a class="btn btn-ll w-100" href="tel:+12046984791"><i class="bi bi-telephone-fill me-1"></i>Call Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" style="background-image:url('assets/images/coastal.jpg');">
+      <div class="container">
+        <p class="script fs-3 mb-2" style="color:#9bde7a">we're here</p>
+        <h1 class="display-5 fw-bold mb-3">Let's talk about care</h1>
+        <p class="lead mb-0 col-lg-7 opacity-90">Tell us what you need—we'll reach out for a free, no-obligation chat.</p>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5 reveal">
+            <h2 class="fw-bold text-navy mb-3">Reach Lifeline</h2>
+            <p class="text-body-secondary fs-5">Victoria, BC · Serving Vancouver Island &amp; Beyond</p>
+            <div class="d-grid gap-3 mt-4">
+              <a class="contact-link" href="tel:+12046984791">
+                <span class="ic" style="background:var(--ll-blue)"><i class="bi bi-telephone-fill"></i></span>
+                +1 (204) 698-4791
+              </a>
+              <a class="contact-link" href="mailto:davies.kavuma@gmail.com">
+                <span class="ic" style="background:var(--ll-green)"><i class="bi bi-envelope-fill"></i></span>
+                davies.kavuma@gmail.com
+              </a>
+              <div class="contact-link">
+                <span class="ic" style="background:var(--ll-navy)"><i class="bi bi-geo-alt-fill"></i></span>
+                Victoria, BC
+              </div>
+            </div>
+            <div class="mt-4">
+              <span class="wsbc" aria-label="WorkSafeBC registered"><span class="w">WORK</span><span class="s">SAFE BC</span></span>
+              <p class="small text-body-secondary mt-2 mb-0">Registered &amp; fully insured</p>
+            </div>
+          </div>
+
+          <div class="col-lg-7 reveal d1">
+            <div class="card contact-card p-3 p-md-4">
+              <form id="contactForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="name" class="form-label fw-bold">Full name</label>
+                    <input id="name" name="name" type="text" class="form-control" autocomplete="name" required>
+                    <div class="invalid-feedback">Please tell us your name.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label fw-bold">Phone</label>
+                    <input id="phone" name="phone" type="tel" class="form-control" autocomplete="tel" required>
+                    <div class="invalid-feedback">Please add a phone number.</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="email" class="form-label fw-bold">Email <span class="fw-normal text-body-secondary">(optional)</span></label>
+                    <input id="email" name="email" type="email" class="form-control" autocomplete="email">
+                  </div>
+                  <div class="col-12">
+                    <label for="service" class="form-label fw-bold">What do you need?</label>
+                    <select id="service" name="service" class="form-select" required>
+                      <option value="" selected disabled>Choose a service…</option>
+                      <option>Home Health &amp; Personal Care</option>
+                      <option>Senior &amp; Disability Care</option>
+                      <option>Respite &amp; Companion Care</option>
+                      <option>Dementia Support</option>
+                      <option>Housekeeping &amp; Home Services</option>
+                      <option>Commercial &amp; Institutional Cleaning</option>
+                      <option>Meal, Transport &amp; Errands</option>
+                      <option>Facility Staffing &amp; Contracts</option>
+                      <option>Community &amp; Government Programs</option>
+                    </select>
+                    <div class="invalid-feedback">Please choose a service.</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="message" class="form-label fw-bold">Anything we should know?</label>
+                    <textarea id="message" name="message" rows="4" class="form-control"></textarea>
+                  </div>
+                  <div class="col-12 d-grid">
+                    <button type="submit" class="btn btn-ll btn-lg py-3"><i class="bi bi-send me-2"></i>Send my request</button>
+                  </div>
+                  <div class="col-12">
+                    <div id="formStatus" class="alert alert-success rounded-4 d-none mb-0" role="status" tabindex="-1"></div>
+                    <p class="small text-body-secondary mb-0 mt-2">POC demo—this form does not send data yet.</p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-band pt-5 pb-4">
+    <div class="container">
+      <div class="row gy-4 align-items-center">
+        <div class="col-md-6">
+          <p class="fs-4 fw-bold mb-1 text-white">Lifeline <span style="color:var(--ll-green)">…</span> Because you matter.</p>
+          <p class="script fs-3 mb-0" style="color:#8fd16f">Your health, our priority.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="mb-1"><a href="tel:+12046984791">+1 (204) 698-4791</a></p>
+          <p class="mb-1"><a href="mailto:davies.kavuma@gmail.com">davies.kavuma@gmail.com</a></p>
+          <p class="mb-2">Victoria, BC · Serving Vancouver Island &amp; Beyond</p>
+          <span class="wsbc" aria-label="WorkSafeBC registered"><span class="w">WORK</span><span class="s">SAFE BC</span></span>
+        </div>
+      </div>
+      <hr class="border-light opacity-25 my-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-2 small">
+        <p class="mb-0">&copy; <span id="year"></span> Lifeline Community Care and Home Services Inc.</p>
+        <p class="photo-credit mb-0">Stock photos: Pexels &amp; Unsplash (POC)</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="call-bar">
+    <a class="btn btn-ll btn-lg w-100" href="tel:+12046984791"><i class="bi bi-telephone-fill me-2"></i>Call Lifeline</a>
+  </div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>
